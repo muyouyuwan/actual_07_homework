@@ -1,5 +1,6 @@
 
 
+```
 
 git init
 mkdir woniu
@@ -8,3 +9,5 @@ git add .
 git commit -m "first commit"
 git remote add origin https://github.com/51reboot/actual_07_homework.git
 git push -u origin master
+
+```
