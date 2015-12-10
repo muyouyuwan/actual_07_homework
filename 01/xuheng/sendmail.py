@@ -13,11 +13,10 @@ class MailModel:
         self.postfix = "126.com"
 
     def write_file(self,what):
-        s=str(what)
         with open("user.txt", "w") as f:
-            what
-            f.writelines(s)
-            f.flush()
+            for key,value in what.items():
+                f.writelines(str(key)+','+str(value)+'\n')
+                f.flush()
 
     def check_key(self,content):
         with open("user.txt", "r") as f:
@@ -33,6 +32,7 @@ class MailModel:
                     listStu.update({content:1})
                     self.write_file(listStu)
                     return listStu[content]
+
     def send_mail(self, user_list, sub, content):
         if self.check_key(content) > 2:
             return 0
