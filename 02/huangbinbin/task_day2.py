@@ -9,12 +9,11 @@ def sortList(argvlist):
         else:
             #Insertion algorithm
             for i in range(1,len(argvlist)):
-                count = i
                 contrast = argvlist[i]
-                while count > 0 and int(contrast) < int(argvlist[count-1]):
-                    argvlist[count] = argvlist[count-1]
-                    count -= 1
-                argvlist[count] = contrast
+                while i > 0 and int(contrast) < int(argvlist[i-1]):
+                    argvlist[i] = argvlist[i-1]
+                    i -= 1
+                argvlist[i] = contrast
             print(argvlist)
             
     except:
