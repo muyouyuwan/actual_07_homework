@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #coding=utf-8
+
 arr = [2,5,3,1,33,2,12,45,23,12,546,-1,9,900,-100,33,44,22]
 for i in range(1,len(arr)):
     if arr[i] < arr[i-1]:
