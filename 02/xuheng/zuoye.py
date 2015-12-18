@@ -8,8 +8,6 @@ for i in range(1,len(seq)):
             if seq[j]>tmp:
                 seq[j+1]=seq[j]
                 pos=j
-            else:
-                break
         seq[pos]=tmp
        # print '排序分解:%s' %seq
 print '排序结果:%s' %seq #排序结果
