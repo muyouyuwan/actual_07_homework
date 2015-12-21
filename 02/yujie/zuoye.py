@@ -118,3 +118,14 @@ After selection sort,the loop count is 13
 The original list is [12, 3, 1, 21, 2, 2, 3, 4111, 22, 3333, 45, 33, 45]
 After insert sort,the list is [1, 2, 2, 3, 3, 12, 21, 22, 33, 45, 45, 3333, 4111]
 After insert sort,the loop count is 5
+
+
+
+
+
+'''
+评注:
+1. 不错，使用了不同的排序算法实现功能
+
+加油
+'''
