@@ -9,8 +9,5 @@ for i in range(1,len(arr)):
 	for j in range(i)[::-1]: # 将定位数字的索引值倒序，依次向前循环比较
 	    if arr[j] > temp:
                 arr[j],arr[j+1] = arr[j+1],arr[j] # 如果当前值比前一个值大，值互相交换
-	
-	    else:		#  如果小于或者等于，跳过循环
-	        
-		continue
+
 print "the sorted list is %s" %arr
