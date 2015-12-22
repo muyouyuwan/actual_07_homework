@@ -4,12 +4,12 @@ first of all, i want make it clear that i can not claim understanding this holy 
 '''
 dict_1 = {}
 for i in read_me:
-	dict_1.setdefault(i,0)
-	dict_1[i]+=1
+    dict_1.setdefault(i,0)
+    dict_1[i]+=1
 list_1 = dict_1.items()
 for j in range(len(list_1)):
-	for key in range(len(list_1)-1-j):
-		if list_1[key][1] < list_1[key+1][1]:
-		    list_1[key],list_1[key+1]= list_1[key+1],list_1[key]
+    for key in range(len(list_1)-1-j):
+        if list_1[key][1] < list_1[key+1][1]:
+            list_1[key],list_1[key+1]= list_1[key+1],list_1[key]
 for _key,_value in list_1[:10]:
-	print '%s共出现%s次' % (_key,_value)
+    print '%s共出现%s次' % (_key,_value)
