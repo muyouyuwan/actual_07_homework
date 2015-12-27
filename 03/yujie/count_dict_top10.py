@@ -73,7 +73,7 @@ if sort_cnt > 10:
 	sort_cnt = 10
 
 for i in range(sort_cnt):
-	for j in range(len(top10_list) - 1):
+	for j in range(len(top10_list) - 1 - i):
 		if top10_list[j][1] > top10_list[j+1][1]:
 			top10_list[j],top10_list[j+1]= top10_list[j+1],top10_list[j]
 		elif top10_list[j][1] == top10_list[j+1][1]:
