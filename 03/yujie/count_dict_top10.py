@@ -17,6 +17,7 @@ we should make our lives glorious to honor our god.finally,i want to sum up by s
 can we live a perfect life, and what you appealed is what god expected!
 '''
 
+# 方法一
 count_dict = {}
 
 for i in read_me:
@@ -51,3 +52,38 @@ for _value in top10_list:
 			count_dict_top10.append(j)		
 
 print count_dict_top10[:10]
+
+# 方法二
+count_dict = {}
+
+for i in read_me:
+	count_dict.setdefault(i,0)
+	count_dict[i] += 1
+
+#print count_dict
+
+top10_list = []
+top10_list = count_dict.items()
+
+print top10_list
+
+sort_cnt = len(top10_list) - 1
+
+if sort_cnt > 10:
+	sort_cnt = 10
+
+for i in range(sort_cnt):
+	for j in range(len(top10_list) - 1):
+		if top10_list[j][1] > top10_list[j+1][1]:
+			top10_list[j],top10_list[j+1]= top10_list[j+1],top10_list[j]
+		elif top10_list[j][1] == top10_list[j+1][1]:
+			if top10_list[j][0] > top10_list[j+1][0]:
+				top10_list[j],top10_list[j+1]= top10_list[j+1],top10_list[j]
+
+print top10_list[-1:-11:-1]
+
+print "Top 10 string and count number are: "
+for x in top10_list[-1:-11:-1]:
+	print "string: \"%s\",count number is: %d" % x
+
+# 方法三
