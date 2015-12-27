@@ -17,14 +17,14 @@ we should make our lives glorious to honor our god.finally,i want to sum up by s
 can we live a perfect life, and what you appealed is what god expected!
 '''
 
-# 方法一
+# 方法一(有缺陷)
 count_dict = {}
 
 for i in read_me:
 	count_dict.setdefault(i,0)
 	count_dict[i] += 1
 
-print count_dict
+#print count_dict
 
 top10_list = []
 
@@ -42,7 +42,7 @@ for i in top10_list:
 
 top10_list = top10_list_uniq[:10]
 
-print top10_list
+#print top10_list
 
 count_dict_top10 = []
 
@@ -51,6 +51,7 @@ for _value in top10_list:
 		if count_dict[j] == _value:
 			count_dict_top10.append(j)		
 
+print "Top 10 string and count number are: "
 print count_dict_top10[:10]
 
 # 方法二
@@ -65,7 +66,7 @@ for i in read_me:
 top10_list = []
 top10_list = count_dict.items()
 
-print top10_list
+#print top10_list
 
 sort_cnt = len(top10_list) - 1
 
@@ -80,10 +81,41 @@ for i in range(sort_cnt):
 			if top10_list[j][0] < top10_list[j+1][0]:
 				top10_list[j],top10_list[j+1]= top10_list[j+1],top10_list[j]
 
-print top10_list[-1:-11:-1]
+#print top10_list[-1:-11:-1]
 
 print "Top 10 string and count number are: "
 for x in top10_list[-1:-11:-1]:
 	print "string: \"%s\",count number is: %d" % x
 
 # 方法三
+char_stat_dict = {}
+
+for _char in read_me:
+	char_stat_dict.setdefault(_char,0)
+	char_stat_dict[_char] += 1
+#print char_stat_dict
+
+num_stat_dict = {}
+
+for _key,_value in char_stat_dict.items():
+	num_stat_dict.setdefault(_value,[])
+	num_stat_dict[_value].append(_key)
+#print num_stat_dict
+
+num_list = num_stat_dict.keys()
+num_list.sort(reverse=True)
+#print num_list
+
+print_cnt = 0
+print_cnt_total = 10
+print "Top 10 string are: "
+for num in num_list:
+	_chars = num_stat_dict[num]
+	_chars.sort()
+	for _char in _chars:
+		print "String: \"%s\",count number: %d" % (_char,num)
+		print_cnt += 1
+		if print_cnt >= print_cnt_total:
+			break	
+	if print_cnt >= print_cnt_total:
+		break
