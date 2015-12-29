@@ -7,9 +7,49 @@ _dict = {}
 for _key in read_me:
 	_dict.setdefault(_key,0)
 	_dict[_key] += 1
-_list = _dict.items()
-for j in range(len(_list)-1):
-	for i in range(len(_list)-1-j):
-		if _list[i][1] > _list[i+1][1]:
-			_list[i],_list[i+1] = _list[i+1],_list[i]
-print _list[-1:-11:-1]
+# _list = _dict.items()
+# print '_list列表为：'
+# print _list
+# list_cout = len(_list) - 1
+# if list_cout > 10:
+# 	list_cout = 10
+# print '列表长度为：'
+# print list_cout
+# for j in range(list_cout):
+# 	for i in range(len(_list)-1 -j):
+# 		if _list[i][1] > _list[i+1][1]:
+# 			_list[i],_list[i+1] = _list[i+1],_list[i]
+# 		elif _list[i][1] == _list[i+1][1]:
+# 			if _list[i][0] > _list[i+1][0]:
+# 				_list[i],_list[i+1] = _list[i+1],_list[i]
+# print '排序后的list：'
+# print _list
+# print _list[-1:-11:-1]
+
+###第二种方法
+#统计出现次数对应的字符
+num_stat_dict = {}
+for _key,_value in _dict.items():
+	num_stat_dict.setdefault(_value,[])
+	num_stat_dict[_value].append(_key)
+print '出现次数对应的字符'
+print num_stat_dict
+#第三步：对所有出现次数进行排序
+num_list = num_stat_dict.keys()
+print '所有次数'
+print num_list
+num_list.sort(reverse=True)
+print '排序后'
+print num_list
+print_cnt = 0
+print_total = 15
+for num in num_list:
+	_chars = num_stat_dict[num]
+	_chars.sort()
+	for _char in _chars:
+		print '字符：%s，出现次数为：%d' % (_char,num)
+		print_cnt += 1
+		if print_cnt >+ print_total:
+			break
+	if print_cnt >+ print_total:
+			break
