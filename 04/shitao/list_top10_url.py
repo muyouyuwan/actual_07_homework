@@ -9,6 +9,7 @@ try:
 		full_url = line.split()[8],line.split()[6],line.split()[0]
 		_dict.setdefault(full_url,0)
 		_dict[full_url] += 1
+	_file.close()
 except BaseException:
 	print "There have been some mistake maybe the %s is not exist " % file_name
 else:
